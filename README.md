@@ -1,4 +1,4 @@
-# Azuremkt_Img_to_vhd
+# Azure VM Marketplace Image to .vhd page blob
 This script allows creating a page blob vhd from a list of Azure Marketplace images
 
 The original purpose of this script was to make it easier to deploy VMs based on Azure Marketplace images in Azure Stack Edge. To import an image to ASE, you need to have it available in blob storage as a page blob with .vhd extension. There's a procedure in ASE's documentation but it's a lot of work to do and it's slow because it uses Start-AzStorageBlobCopy to perform a copy from managed disk to page blob. https://docs.microsoft.com/en-us/azure/databox-online/azure-stack-edge-gpu-create-virtual-machine-marketplace-image
