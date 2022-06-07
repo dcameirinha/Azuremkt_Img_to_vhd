@@ -7,12 +7,12 @@ This script makes it easier to generate the .vhd file because it allows you to s
 
 To run, simply download the .ps1 file and run it from powershell. You'll need:
 
-. Your Azure subscription id
-. The name of a Resource Group (if it doesn't exist, you'll be prompted for a region on which to create it)
-. The name of a Storage Account (if it doesn't exist, the script will attempt to create it)
-. The name of a blob container on the Storage Account (if it doesn't exist, the script wil attempt to create it)
-. The name you want to give the disk
-. AzCopy in your machine (optional, highly recommended)
+- Your Azure subscription id
+- The name of a Resource Group (if it doesn't exist, you'll be prompted for a region on which to create it)
+- The name of a Storage Account (if it doesn't exist, the script will attempt to create it)
+- The name of a blob container on the Storage Account (if it doesn't exist, the script wil attempt to create it)
+- The name you want to give the disk
+- AzCopy in your machine (optional, highly recommended)
 
 At this moment, the script doesn't verify if creating the resource group, storage account, or blob container is successful or not. It would be recommended that you make sure the names you use are unique and valid if you don't use resources that already exist and are relying on the script to create them for you.
 The script also simply assumes the creation of the intermediate managed disk is successful, so make sure the name is unique and valid.
