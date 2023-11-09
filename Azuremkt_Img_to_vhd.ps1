@@ -89,8 +89,8 @@ Write-Host "3: 2019 Datacenter Core"
 Write-Host "4: 2019 Datacenter Core 30GB"
 Write-Host "5: Windows 10"
 Write-Host "6: Windows 11"
-Write-Host "7: Canonical Ubuntu Server 18.04 LTS"
-Write-Host "8: Canonical Ubuntu Server 16.04 LTS"
+Write-Host "7: Canonical Ubuntu Server 22.04 LTS"
+Write-Host "8: Canonical Ubuntu Server 20.04 LTS"
 Write-Host "9: CentOS 8.1"
 Write-Host "10: CentOS 7.7"
 
@@ -107,8 +107,8 @@ While (!$imageselecttest)
         4 {$image = Get-AzVMImage -PublisherName "MicrosoftWindowsserver" -Offer "Windowsserver" -sku "2019-Datacenter-core-smalldisk" -Location $location | Select-Object -Index 0; break}
         5 {$image = Get-AzVMImage -PublisherName "MicrosoftWindowsDesktop" -Offer "Windows-10" -sku "win10-21h2-pro" -Location $location | Select-Object -Index 0; break}
         6 {$image = Get-AzVMImage -PublisherName "MicrosoftWindowsDesktop" -Offer "Windows-11" -sku "win11-21h2-pro" -Location $location | Select-Object -Index 0; break}
-        7 {$image = Get-AzVMImage -PublisherName "Canonical" -Offer "UbuntuServer" -sku "18.04-LTS" -Location $location | Select-Object -Index 0; break}
-        8 {$image = Get-AzVMImage -PublisherName "Canonical" -Offer "UbuntuServer" -sku "16.04-LTS" -Location $location | Select-Object -Index 0; break}
+        7 {$image = Get-AzVMImage -PublisherName "Canonical" -Offer "0001-com-ubuntu-server-jammy" -sku "22_04-lts" -Location $location | Select-Object -Index 0; break}
+        8 {$image = Get-AzVMImage -PublisherName "Canonical" -Offer "0001-com-ubuntu-server-focal" -sku "20_04-lts" -Location $location | Select-Object -Index 0; break}
         9 {$image = Get-AzVMImage -PublisherName "OpenLogic" -Offer "CentOS" -sku "8_1" -Location $location | Select-Object -Index 0; break}
         10 {$image = Get-AzVMImage -PublisherName "OpenLogic" -Offer "CentOS" -sku "7.7" -Location $location | Select-Object -Index 0; break}
         default {imageselecttest = $false; Write-Host "You chose poorly: Image could not be found, maybe it is not available in this region; break"}
